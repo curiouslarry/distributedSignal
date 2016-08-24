@@ -1,0 +1,126 @@
+\documentclass{article}
+\begin{document}
+\title{Midg:  Massive Information Disparity Games $\vee$ \\
+ (Smidg:  simulation of midg)  $\vee$ \\ 
+On Distributed Deceivers Problem I
+}
+\author{ BuLaMiRu}
+\maketitle
+
+
+\section{Introduction}
+Rather than repeated two person games, or repeated multiperson games,
+we consider a large number of two person games, however, one player is
+a distributed, multi-headed agent.  This agent  shares information
+about the players.
+
+\section{Foundations and Assumptions}
+
+
+In addition to the usual signaling game notation, 
+
+\begin{itemize}
+\item Each game is played between one DA (disruptive agent) and ICs (innocent clients)
+
+\item The ICs are all independent and do not collaborate or
+  communicate.
+
+\item There are an unbounded number of IC players
+
+\item There are a set of  $K_c$ classes or types of the IC players.  All the players of the same type 
+have the same utility function. 
+
+\item The games are independent in time and can be played
+  simultaneously.  They start at different times and make moves at
+  different speeds.  There is a continuous stream of IC players that
+  arrive at random times.
+
+\item The DA (deceptive, agent) does not know the IC player type.
+  (The DA wants to learn that quickly
+
+\item  The game is setup so that without any knowledge, the players
+  are even with equal chances of winning or losing.   The player with
+  knowledge has a dominant strategy.
+\end{itemize}
+
+
+\section{Theory}
+
+Theorem 1:  Assume one player knows nothing of the other, and one
+player (DA),  knows the other player's utility with probability $\delta >
+0$.  Then DA  has expect positive payoff of   $\epsilon$ 
+
+Theorem 2:  Assume that after playing $K$ games against an IC player,
+the DA knows the players utility with prob $\delta$ but may have lost
+up  of $C$,  there is some number,$N_0$, of games played, after which
+DA will continue to make money.
+
+
+Then some other theorems with better bounds, including when there are
+other ways of learning the utility functions (without playing the
+game) via some outside signals.
+
+Theorem.   Bounds as a function of the number of signals or messages
+(or products)
+
+
+\subsection{Informal Idea}
+
+The DA sends a message with the whole goal of getting the IC to take a
+particular action, $A$.  IC has only two actions: $A$ or $No$ (do nothing).  
+DA wins and IC loses, when IC takes action $A$ e.g. a payoff of  (K,-K).
+
+The DA (sender) has $N_s$ signals  it can send, each costing DA a
+small amount,  e.g. (-1,1). One of
+those messages makes IC do $A$, the other makes IC do some type of
+null action $No$.  There are $N_r$ possible actions, but only one is
+good for DA and bad for IC.
+It can
+take  $N_m$ signal attempts to get   IC to do $A$.   If $N_m > K$ then the DA
+loses on this sequence.
+
+However, one DA knows what works for this IC, it might do better with
+the other players.   It can learn the type from recording the messages
+that IC sends in response to particular signals.
+
+
+\begin{tabular}{l | c | c}
+                    &  $A$      &   $B_1 ... B_{N_r}$          \\ \hline
+$M_0$          & (k,-k)    & (-1,1)      \\ \hline
+$M_1$          & (k,-k)    &   (-1,1)    \\ \hline
+$M_2$          & (k,-k)    &   (-1,1)    \\ \hline
+$M_{N_s}$      & (k,-k)    &   (-1,1)    \\ \hline
+\end{tabular}
+
+
+\section{Experiments}
+
+Implement in some multi-agent (python) framework along with varying
+the number of types, delays, etc.
+
+Each type or class of IC will respond with action $A$ when DA sends a
+particular message, $M_A$ and a unique $No$ type of action that does
+not give a bigger pay off but does identify the player.
+
+Details on initializing classes of players.
+For each class:
+      start with an empty array of $N_s$ responses to any of the $N_s$ signals
+      randomly fill in the array with any of the $N_r-1$  action responses.
+      randomly place action $A$ into one random location.
+
+For each IC, randomly assign it one of the class arrays.
+
+
+\section{Conclusion}
+
+We show that when the distributed agent plays against a large number
+of individuals but where individuals are not all unique,  a patient
+agent will always come out ahead once it learns the individuals
+utility function.   
+
+The abstract fear of lose of privacy, as pointed out in the abstract,
+is not so abstract.  The fear of the unknown is very real for the
+distributed agent.
+
+
+\end{document}
