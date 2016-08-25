@@ -1,0 +1,29 @@
+The main theorem:
+
+(1) Assume a fixed number of types or utility functions.
+(2) Assume an unbounded number of players whose types are unknown.
+(3) Assume players are not deceptive.
+(4) After playing a fixed number of rounds of a game, player 1 is able to identify the type of player 2.
+(5) Assume that if player 1 knows the type of player 2 but player 2 does not know the type of player 1, then player 1 has \epsilon+1 probability of coming out ahead of player2.
+(6)  player 1 has unbounded storage  
+(7) Finally assume each game is finite.
+
+Therum:  player 1 will always come out ahead after playing a sufficient number of games.
+
+proof.  after playing against each type, player 1 learns the type and when it sees a player of that type in the future, it will win.    Each time it plays against someone of an unseen type, it will learn that type.   If the type of a player is only seen a constant number of times, then only may lose a constant amount of times.   FOr all others, player 1, eventually learns the type and then wins.
+
+Players do not change their types..
+
+
+ When player 1 encounters a new type, it may confuse it with a different type ad make the wrong moves or send the wrong messsage.  However, it will discover, in constant time, that two types share some initial sequnce and will not make the same mistake again.
+
+THe rest of this section deals with various optimizations so that player 1 learns the types of the players faster.
+
+Suppose type A occurs more frequently than type B but they both share some initial game features.  As soon as player 1 concludes that the other player is of type A or B but none other,  it concludes that it is of type A.Since it has identified that type A is more frequent, then evenif it is wrong, then it can still win more often than it loses.
+'./   Even if player 2 is consistently wrong, it is fine because it
+
+
+Any other information other than the game can be used to classify the player's type.
+
+
+When player 1 jas learned all the types its profit is proportional to the number of games.  To increase growth, it can play different games, be deceptive, or sorten the game time.
