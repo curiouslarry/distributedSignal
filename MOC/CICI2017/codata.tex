@@ -1,0 +1,57 @@
+\documentclass[twoside]{article}
+\input{macro}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+\pagestyle{fancy}  % mmm, crab
+\fancyhf{}
+\fancyhead[CO,CE]{---Draft---}
+\fancyhead[RE]{Mayank, Larry, others}
+\fancyhead[LO]{}
+\fancyfoot[C]{}
+\fancyfoot[RO,LE] {\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{%
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}% Clear header/footer
+\fancyfoot[C]{Draft Proposal}
+\fancyfoot[RO,LE] {\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+\newcommand{\larrynote}[1]{\textcolor{red}{Larry's Point: #1}}
+\newcommand{\larryanswer}[1]{\textcolor{red}{Larry's Counterpoint: #1}}
+\newcommand{\mayanknote}[1]{\textcolor{green}{Leif's Point: #1}}
+\newcommand{\lmayankanswer}[1]{\textcolor{green}{Leif's Counterpoint: #1}}
+\newcommand{\note}[1]{\textcolor{green}{Note: #1}}
+
+
+\begin{document}
+\title{Have your cake, eat it, and hide the ingredients}
+
+\author{Mayank, Larry, Merced, Azer, Orran, others?}
+
+\date{\today}
+
+\maketitle
+
+
+\begin{abstract}
+Data is important, sharing data is important, collaboration is important but sois protecting the data even from collaborators.
+Dataverse is an existing technology that provides curated datasets, tagged with both functional and legal access policies.  The mass open cloud (MOC) is an existing cloud technology that permits multiple tenants to perform elastic computations on their data in an isolated, trust no-one fashion, through advanced federated login, hardware as a service facility with novel Hardware Isolation Layer and  Bare Metal Imaging.   Multi-party computation (MPC) is an existing technology that provides two or more parties to perform a computation on data in such a way that no party can learn something about the data that is not inferred from the output.
+
+Combing these three technologies yields an unexpected consequence -- the ability of ``paranoid'' parties to collaborate.  One or more of the collaborating parties may have their own dataset whose contents they wish to remain confidential.  They may not want to share the data even with their collaborators.   However, they may want to perfroma a computation over one or more of the data sets, e.g. they want to share their cake.   The collaborators may all see the output of the computation, e.g. ``eat their cake''.   Different parts of the computation are performed by different parties in such a way, that no party can learn anything about the data, e.g. ``hide the ingredients''.
+
+Dataverse provides the data set infrastructure, MPC provides the computational method, and MOC provdes the low latency communication between isolated hardware that is necessary for MPC to be practical.
+\end{abstract}
+
+\input{intro}
+\input{prelim}
+%\input{details}
+\section{Details}
+%\input{conclusion}
+\section{Conclusion}
+
+\bibliographystyle{abbrvnat}
+\bibliography{codata}
+\end{document}

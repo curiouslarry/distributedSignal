@@ -1,0 +1,52 @@
+\section{Preliminaries}
+
+Combining the three technologies gives something new, powerful, and unexpected.
+
+
+
+\subsection{MOC and MPC}
+
+Unlike most of the public cloud infrastructure, in the MOC, there is not trusted provider.   Each tenant gets a physical server.  The tenant may choose to install a virtual machine infrastructure on the server.    The cloud provider, i.e. the MOC, makes it easy for the tenant to install a hypervisor and run VMs, but the MOC does not have control or access to the anything running on the server.   The MOC also provides secure mechanism to measure and attest to the tenant that the firmware, operating system, and hypervisor have not been compromised.   Once up and running, the environment can appear to the tenant just like a public (Closed) cloud, with one big difference:  the tenant does not have to trust the provider and is isolated from all other tenants.
+
+In addition, this isolation between tenants is like the isolation provided when tenants execute in their own private data centers.  However, since the tenants are co-located within the same datacenter, the network latency between the tenants is very low.  This is a crucial requirement for practical MPC.   Under MPC, the parties frequently communication and the computation is usually are waiting for partial results from the other parties.   The difference in latency speed between  being co-located and geographically separate may be two or three orders of magnitude.   An hour co-located computation may take 100 or 1,000 hours in separate data center computation, making MPC impractical.    Note that because of the relatively large number of rounds, each of a small amount of data being communication, places a premium on latency.  The general internet is optimized for bandwidth and not low latency.
+
+The MOC, being an open market place, provides different types of network switches.   For MPC the parties can make use of low latency switches (PODS reference) that are optimized for the MPC needs.
+
+
+\subsection{MPC and Cloud Dataverse/Datatags}
+
+->  Add computing to cloud dataverse
+
+->  Allows secure creation of new data set
+
+<-  For classification storage based on synthesizing data
+
+
+Input:  where the data live
+
+Output:  where the access control decisions / attribution is done and provenance logging is performed.
+
+
+\subsection{MOC and Cloud Dataverse}
+
+Single shard location for lots of data 
+(Analogy:  interlibrary loan)
+
+Policy:  who can read data, why, how
+Orchestration
+
+
+
+\subsection{The synergistic  payoff}
+
+People have been collaborating for years and there are many ways to collaborate with big data sets.   There are many levels of security needs, levels of paranoa, potential legal implications, and the like.   Often, collaboration requires some amount of ``re-inventing the wheel'' and access to experts.
+
+The synergistic payoff of our proposed combining is two-fold.  It eliminates teh need to re-invent the wheel.  Second, it forsters ``separation of concerns'' so that each concern can be addressed fully and in depth. 
+
+Specifically, it provides the amortization of:
+\begin{itemize}
+\item Security programmers
+\item Lawyers
+\item IT Staff
+\item Classification expert and policy-agnostic programming
+\end{itemize}   

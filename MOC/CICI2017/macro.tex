@@ -1,0 +1,55 @@
+\usepackage{silence} % Shut up LaTeX warnings selectively using \WarningFilter
+\WarningFilter{fixltx2e}{fixltx2e is not required with releases after 2015}
+\usepackage{fixltx2e}
+\usepackage[T1]{fontenc} % needed for lmodern
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern} % more complete than the default CM font
+\usepackage{ctable} % nice tables
+\usepackage{hyperref} % Must be loaded before cleveref
+\usepackage[capitalise]{cleveref} % to have smart references using \cref
+\crefname{section}{Sect.}{Sect.}
+\Crefname{section}{Sect.}{Sect.}
+\crefname{subsection}{Sect.}{Sect.}
+\Crefname{subsection}{Sect.}{Sect.}
+\crefname{subsection}{§}{§§}
+\crefformat{section}{Sect.~#2#1#3}
+\crefname{theorem}{thm.}{thms.}
+\Crefname{theorem}{Thm.}{Thms.}
+\crefformat{theorem}{Thm.~#2#1#3}
+\crefname{fact}{fact}{facts}
+\Crefname{fact}{Fact}{Facts}
+\crefformat{fact}{Fact~#2#1#3}
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+\usepackage[numbers,sort&compress,square]{natbib}
+%\renewcommand{\refname}{References}
+%\renewcommand{\bibsection}{\section{References}}
+\usepackage[ruled,linesnumbered]{algorithm2e} % must be loaded after natbib
+%\usepackage{url} % XXX check if needed
+\usepackage{xspace} % used for space after commands
+
+% Temporary package. Either remove or change 'show' to 'hide'. The
+% \WarningFilter is needed to shut up silly warnings about relative paths
+\WarningFilter{latex}{You have requested package}
+\usepackage[show]{chato-notes/chato-notes}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{fact}{Fact}
+\newtheorem{conjecture}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\newcommand{\spara}[1]{\smallskip\noindent{\bf #1.}}
+\newcommand{\para}[1]{\noindent{\bf #1.}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
